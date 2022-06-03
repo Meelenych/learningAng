@@ -1,0 +1,28 @@
+<!-- <app-car></app-car> <app-car></app-car> -->
+<!-- <div app-car></div> -->
+<!-- <button class="btn btn-primary" [disabled]="!canAddCar">Add car</button> -->
+<!-- [disabled] - в кв. скобках означаает, что он связан с переменной  -->
+
+<!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
+<button class="btn btn-primary" (click)="addCar()">Add car</button>
+<p>{{ addCarStatus }}</p>
+<hr />
+<div class="app-car"></div>
+<hr />
+<!-- <input type="text" class="form-control" (input)="onKeyUp($event)" /> -->
+
+<!-- <input
+  type="text"
+  class="form-control"
+  #myInput
+  (input)="onKeyUp(myInput.value)"
+/>
+<br />
+<p>{{ inputText }}</p> -->
+
+<!-- <hr />
+<input type="text" class="form-control" (input)="onKeyUp($event)" />
+<p>{{ inputText }}</p> -->
+
+<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)" />
+<p>{{ inputText }}</p>
