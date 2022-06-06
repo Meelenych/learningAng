@@ -25,4 +25,9 @@
 <p>{{ inputText }}</p> -->
 
 <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)" />
+
+<input type="text" class="form-contcrol" [(ngModel)]="inputText" />
+
 <p>{{ inputText }}</p>
+<!-- [] - использование данных из шаблона в компонент  one-way binding -->
+<!-- () - использование данных из компонента в шаблон one-way binding -->

@@ -17,7 +17,7 @@ export class CarsComponent {
   // }
 
   addCarStatus = '';
-  inputText = ''
+  inputText = 'default text'
 
   constructor() {
   }
