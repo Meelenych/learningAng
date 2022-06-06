@@ -16,14 +16,18 @@ export class CarsComponent {
   //   }, 4000)
   // }
 
-  addCarStatus = '';
-  inputText = 'default text'
+  // addCarStatus = '';
+  // inputText = 'default text'
+
+  carName = '';
+  addCarStatus = false;
 
   constructor() {
   }
 
   addCar() {
-    this.addCarStatus = 'Car was added!'
+    // this.addCarStatus = 'Car was added!'
+    this.addCarStatus = true;
   }
 
   // onKeyUp(event: Event): void {
@@ -44,8 +48,8 @@ export class CarsComponent {
   // }
 
 
-  onKeyUp(event: any) {
-    this.inputText = (<HTMLInputElement>event.target).value
-  }
+  // onKeyUp(event: any) {
+  //   this.inputText = (<HTMLInputElement>event.target).value
+  // }
 }
 

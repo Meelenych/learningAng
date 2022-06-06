@@ -4,8 +4,22 @@
 <!-- [disabled] - в кв. скобках означаает, что он связан с переменной  -->
 
 <!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
+
+<input type="text" class="form-control" [(ngModel)]="carName" />
+
 <button class="btn btn-primary" (click)="addCar()">Add car</button>
-<p>{{ addCarStatus }}</p>
+<!-- <p>{{ addCarStatus }}</p> -->
+<hr />
+
+<!-- <p *ngIf="!addCarStatus">No car was added!</p>
+<p *ngIf="addCarStatus">Car was added!</p> -->
+
+<p *ngIf="!addCarStatus; else successStatus">No car was added!</p>
+
+<ng-template #successStatus>
+  <p>Car was added!</p>
+</ng-template>
+
 <hr />
 <div class="app-car"></div>
 <hr />
@@ -24,10 +38,9 @@
 <input type="text" class="form-control" (input)="onKeyUp($event)" />
 <p>{{ inputText }}</p> -->
 
-<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)" />
-
+<!-- <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)" />
 <input type="text" class="form-contcrol" [(ngModel)]="inputText" />
+<p>{{ inputText }}</p> -->
 
-<p>{{ inputText }}</p>
 <!-- [] - использование данных из шаблона в компонент  one-way binding -->
 <!-- () - использование данных из компонента в шаблон one-way binding -->
