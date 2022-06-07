@@ -22,13 +22,13 @@ export class CarsComponent {
 
   carName = '';
   addCarStatus = false;
-  cars = ['Ford', 'Audi', 'BMW'];
-  items = [
-    { id: 345, name: 'water' },
-    { id: 623, name: 'fire' },
-    { id: 235, name: 'air' },
-    { id: 236, name: 'earth' }
-  ];
+  cars = ['Ford', 'Audi', 'BMW', 'Toyota', 'Opel'];
+  // items = [
+  //   { id: 345, name: 'water' },
+  //   { id: 623, name: 'fire' },
+  //   { id: 235, name: 'air' },
+  //   { id: 236, name: 'earth' }
+  // ];
 
   constructor() {
   }
@@ -38,6 +38,10 @@ export class CarsComponent {
     this.addCarStatus = true;
     this.cars.push(this.carName);
     this.carName = '';
+  }
+
+  setBigCarText(car: string) {
+    return car.length > 4 ? true : false;
   }
 
   // onKeyUp(event: Event): void {

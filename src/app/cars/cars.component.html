@@ -24,15 +24,29 @@
 <!-- <div class="app-car"></div>
 <hr /> -->
 
-<div class="app-car" *ngFor="let car of cars"></div>
+<!-- <div class="app-car" *ngFor="let car of cars"></div> -->
 
 <hr />
 
 <ul>
+  <li *ngFor="let car of cars; let idx = index">
+    <div
+      [ngStyle]="{
+        'background-color': (idx + 1) % 2 === 0 ? 'blue' : 'yellow',
+        color: (idx + 1) % 2 === 0 ? 'white' : ''
+      }"
+      [ngClass]="{ 'big-text': setBigCarText(car) }"
+    >
+      <b>{{ idx + 1 }} - </b> <i>{{ car }}</i>
+    </div>
+  </li>
+</ul>
+
+<!-- <ul>
   <li *ngFor="let item of items; let idx = index">
     {{ idx + 1 }} <b>{{ item.name }} </b> {{ item.id }}
   </li>
-</ul>
+</ul> -->
 
 <!-- <input type="text" class="form-control" (input)="onKeyUp($event)" /> -->
 
