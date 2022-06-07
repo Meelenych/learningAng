@@ -6,6 +6,7 @@
 <!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
 
 <input type="text" class="form-control" [(ngModel)]="carName" />
+<input type="text" class="form-control" [(ngModel)]="carYear" />
 
 <button class="btn btn-primary" (click)="addCar()">Add car</button>
 <!-- <p>{{ addCarStatus }}</p> -->
@@ -14,35 +15,39 @@
 <!-- <p *ngIf="!addCarStatus">No car was added!</p>
 <p *ngIf="addCarStatus">Car was added!</p> -->
 
-<p *ngIf="!addCarStatus; else successStatus">No car was added!</p>
+<!-- <p *ngIf="!addCarStatus; else successStatus">No car was added!</p>
 
 <ng-template #successStatus>
   <p>Car was added!</p>
-</ng-template>
+</ng-template> -->
 
-<hr />
+<!-- <hr /> -->
 <!-- <div class="app-car"></div>
 <hr /> -->
 
 <!-- <div class="app-car" *ngFor="let car of cars"></div> -->
 
-<hr />
+<!-- <hr /> -->
 
-<ul>
+<!-- можно перебрать так ... -->
+<!-- <ul>
   <li *ngFor="let car of cars; let idx = index">
     <div
       [ngStyle]="{
         'background-color': (idx + 1) % 2 === 0 ? 'blue' : 'yellow',
         color: (idx + 1) % 2 === 0 ? 'white' : ''
       }"
-      [ngClass]="{ 'big-text': setBigCarText(car) }"
+      [ngClass]="{ 'big-text': setBigCarText(car.name) }"
     >
-      <b>{{ idx + 1 }} - </b> <i>{{ car }}</i>
+      <b>{{ idx + 1 }} - </b> <i>{{ car.name }}</i> - <b>{{ car.year }}</b>
     </div>
   </li>
-</ul>
+</ul> -->
 
-<ul>
+<!-- а можно вот так! -->
+<div class="app-car" *ngFor="let car of cars" [carItem]="car"></div>
+
+<!-- <ul>
   <h4>формат по умолчанию</h4>
   <li *ngFor="let date of dates">{{ date | date }}</li>
   <hr />
@@ -57,7 +62,7 @@
   <hr />
   <h4>формат uppercase</h4>
   <li *ngFor="let date of dates">{{ date | uppercase }}</li>
-</ul>
+</ul> -->
 
 <!-- <ul>
   <li *ngFor="let item of items; let idx = index">

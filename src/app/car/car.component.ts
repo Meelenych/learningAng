@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   // selector: 'app-car', // как тег <app-car>
@@ -13,11 +13,15 @@ import { Component } from '@angular/core';
 })
 export class CarComponent {
 
-  carName = 'Ford'
-  carModel = 'Sierra'
-  carYear = '1986'
+  // carName = 'Ford'
+  // carModel = 'Sierra'
+  // carYear = '1986'
 
-  getName() {
-    return this.carName
-  }
+  // getName() {
+  //   return this.carName
+  // }
+  @Input() carItem: { name: string, year: number } = { name: '', year: 0 }
+
+  // или так чере элиас Allias
+  // @Input('carItem') car: { name: string, year: number } = { name: '', year: 0 }
 }
