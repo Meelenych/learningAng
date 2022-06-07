@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarComponent } from '../car/car.component';
 
 @Component({
   selector: 'app-cars',
@@ -21,6 +22,13 @@ export class CarsComponent {
 
   carName = '';
   addCarStatus = false;
+  cars = ['Ford', 'Audi', 'BMW'];
+  items = [
+    { id: 345, name: 'water' },
+    { id: 623, name: 'fire' },
+    { id: 235, name: 'air' },
+    { id: 236, name: 'earth' }
+  ];
 
   constructor() {
   }
@@ -28,6 +36,8 @@ export class CarsComponent {
   addCar() {
     // this.addCarStatus = 'Car was added!'
     this.addCarStatus = true;
+    this.cars.push(this.carName);
+    this.carName = '';
   }
 
   // onKeyUp(event: Event): void {

@@ -21,8 +21,19 @@
 </ng-template>
 
 <hr />
-<div class="app-car"></div>
+<!-- <div class="app-car"></div>
+<hr /> -->
+
+<div class="app-car" *ngFor="let car of cars"></div>
+
 <hr />
+
+<ul>
+  <li *ngFor="let item of items; let idx = index">
+    {{ idx + 1 }} <b>{{ item.name }} </b> {{ item.id }}
+  </li>
+</ul>
+
 <!-- <input type="text" class="form-control" (input)="onKeyUp($event)" /> -->
 
 <!-- <input
