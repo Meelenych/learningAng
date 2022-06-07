@@ -30,6 +30,14 @@ export class CarsComponent {
   //   { id: 236, name: 'earth' }
   // ];
 
+  dates = [
+    new Date(2022, 15, 5).toDateString(),
+    new Date(2000, 30, 6).toDateString(),
+    new Date(2015, 22, 2).toDateString(),
+    new Date(2021, 31, 12).toDateString(),
+    new Date(2022, 14, 2).toDateString(),
+  ]
+
   constructor() {
   }
 

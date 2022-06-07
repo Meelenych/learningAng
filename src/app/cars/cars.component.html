@@ -42,6 +42,23 @@
   </li>
 </ul>
 
+<ul>
+  <h4>формат по умолчанию</h4>
+  <li *ngFor="let date of dates">{{ date | date }}</li>
+  <hr />
+  <h4>формат short</h4>
+  <li *ngFor="let date of dates">{{ date | date: "short" }}</li>
+  <hr />
+  <h4>формат medium</h4>
+  <li *ngFor="let date of dates">{{ date | date: "medium" }}</li>
+  <hr />
+  <h4>формат long</h4>
+  <li *ngFor="let date of dates">{{ date | date: "long" }}</li>
+  <hr />
+  <h4>формат uppercase</h4>
+  <li *ngFor="let date of dates">{{ date | uppercase }}</li>
+</ul>
+
 <!-- <ul>
   <li *ngFor="let item of items; let idx = index">
     {{ idx + 1 }} <b>{{ item.name }} </b> {{ item.id }}
