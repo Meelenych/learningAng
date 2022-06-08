@@ -8,8 +8,6 @@ import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { BackgroundDirective } from './directives/my-directives/background.directive';
-import { DirectivesnewDirectiveDirective } from './directivesnew-directive.directive';
-import { NewDirectiveDirective } from './app/directives/new-directive.directive';
 import { NewDirective } from './directives/new-directive/new.directive';
 
 @NgModule({
@@ -20,8 +18,7 @@ import { NewDirective } from './directives/new-directive/new.directive';
     AddCarComponent,
     DirectivesComponent,
     BackgroundDirective,
-    DirectivesnewDirectiveDirective,
-    NewDirectiveDirective,
+
     NewDirective
   ],
   imports: [
