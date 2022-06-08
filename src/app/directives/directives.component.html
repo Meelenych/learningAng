@@ -1,4 +1,27 @@
 <h1 appBackground>{{ headerText }}</h1>
 <h2 appNew>Host binding</h2>
 <h3 appHover [hoverColor]="'orange'" [defaultColor]="'royalblue'">Hover me!</h3>
-<h3 appHover [hoverColor] [defaultColor]>Hover me2!</h3>
+<h3 appHover [hoverColor] [defaultColor]>Hover me too!</h3>
+
+<h2>Choose your destiny!</h2>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let name of names"
+    (click)="onClick(name)"
+  >
+    {{ name }}
+  </li>
+</ul>
+
+<div [ngSwitch]="current">
+  <h4 *ngSwitchCase="'Scorpion'">Scorpion</h4>
+  <h4 *ngSwitchCase="'Sub Zero'">Sub Zero</h4>
+  <h4 *ngSwitchCase="'Lu Kang'">Lu Kang</h4>
+  <h4 *ngSwitchCase="'Meelena'">Meelena</h4>
+  <h4 *ngSwitchCase="'Kitana'">Kitana</h4>
+  <h4 *ngSwitchCase="'Johnny Cage'">Johnny Cage</h4>
+  <h4 *ngSwitchCase="'Reptile'">Reptile</h4>
+  <h4 *ngSwitchCase="'Raiden'">Raiden</h4>
+  <h4 *ngSwitchCaseDefault>Default</h4>
+</div>

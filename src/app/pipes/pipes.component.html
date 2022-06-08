@@ -1,0 +1,35 @@
+<h2 class="alert alert-title alert-danger">Pipes usage!</h2>
+<ol>
+  <li>{{ name }}</li>
+  <li>{{ name | lowercase }}</li>
+  <li>{{ name | uppercase }}</li>
+  <li>{{ name | slice: 0:3 }}</li>
+  <li>{{ name | slice: 2:5 | uppercase }}</li>
+  <hr />
+  <li>{{ pi }}</li>
+  <li>{{ pi | number }}</li>
+  <li>{{ pi | number: "1.3-4" }}</li>
+  <li>{{ pi | number: "2.2-2" }}</li>
+  <hr />
+  <li>{{ money | currency: "USD" }}</li>
+  <li>{{ money | currency: "EUR":true }}</li>
+  <li>{{ money | currency: "UAH":false }}</li>
+  <hr />
+  <li>{{ date }}</li>
+  <li>{{ date | date: "fullDate" }}</li>
+  <li>{{ date | date: "shortDate" }}</li>
+  <li>{{ date | date: "mediumDate" }}</li>
+  <li>{{ date | date: "longDate" }}</li>
+  <li>{{ date | date: "shortTime" }}</li>
+  <li>{{ date | date: "mediumTime" }}</li>
+  <li>{{ date | date: "fullTime" }}</li>
+  <hr />
+  <li>{{ amount }}</li>
+  <li>{{ amount | percent }}</li>
+  <hr />
+  <li>{{ object }}</li>
+  <li>{{ object | json }}</li>
+  <li>
+    <pre>{{ object | json }}</pre>
+  </li>
+</ol>

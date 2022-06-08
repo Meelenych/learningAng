@@ -10,6 +10,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { BackgroundDirective } from './directives/my-directives/background.directive';
 import { NewDirective } from './directives/new-directive/new.directive';
 import { HoverDirective } from './directives/hover/hover.directive';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HoverDirective } from './directives/hover/hover.directive';
     BackgroundDirective,
 
     NewDirective,
-     HoverDirective
+     HoverDirective,
+     PipesComponent
   ],
   imports: [
     BrowserModule, FormsModule,

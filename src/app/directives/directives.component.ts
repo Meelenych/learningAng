@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class DirectivesComponent {
 
-  headerText: string = 'Create your directives!'
+  headerText: string = 'Create your directives!';
+
+  names = ['Scorpion', 'Sub Zero', 'Lu Kang', 'Meelena', 'Kitana', 'Johnny Cage', 'Reptile', 'Raiden'];
+  current = 'Default'
+
+  onClick(name: string) {
+    this.current = name;
+  }
 
 }
