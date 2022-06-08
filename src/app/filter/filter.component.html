@@ -1,0 +1,26 @@
+<h1>Filter Pipe</h1>
+<input
+  type="text"
+  class="form-control"
+  placeholder="type car make here"
+  [(ngModel)]="searchCar"
+/>
+<hr />
+<ul>
+  <li *ngFor="let car of cars | carFilter: searchCar:'name'">
+    <b>{{ car.name }} </b> <i>{{ car.model }} </i> {{ car.year }}
+  </li>
+</ul>
+<hr />
+<input
+  type="text"
+  class="form-control"
+  placeholder="type car model here"
+  [(ngModel)]="searchCar"
+/>
+<hr />
+<ul>
+  <li *ngFor="let car of cars | carFilter: searchCar:'model'">
+    <b>{{ car.name }} </b> <i>{{ car.model }} </i> {{ car.year }}
+  </li>
+</ul>

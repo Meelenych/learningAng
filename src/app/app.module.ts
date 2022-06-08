@@ -14,6 +14,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { OwnPipesComponent } from './own-pipes/own-pipes.component';
 import { PowPipe } from './own-pipes/my-pipe/pow.pipe';
 import { TestPipe } from './own-pipes/test-pipe/test.pipe';
+import { FilterComponent } from './filter/filter.component';
+import { FilterPipe } from './own-pipes/car-filter/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,13 @@ import { TestPipe } from './own-pipes/test-pipe/test.pipe';
     DirectivesComponent,
     BackgroundDirective,
     PowPipe,
-
     NewDirective,
     HoverDirective,
     PipesComponent,
     OwnPipesComponent,
-    TestPipe
+    TestPipe,
+    FilterComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule, FormsModule,
