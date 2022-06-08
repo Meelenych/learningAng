@@ -9,7 +9,8 @@ import { Component, Input } from '@angular/core';
   // <div><h1>Hi there!</h1></div> // шаблон может быть сразу внутри
   // `,
   styleUrls: ['./car.component.css'],
-  styles: [`p {color:red;}`] // можно писать стили прямо в массиве
+  styles: [`p {color:blue;}`],
+  // можно писать стили прямо в массиве
 })
 export class CarComponent {
 
@@ -22,6 +23,6 @@ export class CarComponent {
   // }
   @Input() carItem: { name: string, year: number } = { name: '', year: 0 }
 
-  // или так чере элиас Allias
+  // или так через элиас Allias
   // @Input('carItem') car: { name: string, year: number } = { name: '', year: 0 }
 }

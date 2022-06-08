@@ -4,9 +4,10 @@
 <!-- [disabled] - в кв. скобках означаает, что он связан с переменной  -->
 
 <!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
-
-<input type="text" class="form-control" [(ngModel)]="carName" />
-<input type="text" class="form-control" [(ngModel)]="carYear" />
+<p>Type car make here</p>
+<input type="text" class="form-control mb-3" [(ngModel)]="carName" />
+<p>Type car year here</p>
+<input type="text" class="form-control mb-3" [(ngModel)]="carYear" />
 
 <button class="btn btn-primary" (click)="addCar()">Add car</button>
 <!-- <p>{{ addCarStatus }}</p> -->

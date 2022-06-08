@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { CarComponent } from '../car/car.component';
+// import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.css'],
+  // encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CarsComponent {
 
