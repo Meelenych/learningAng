@@ -11,6 +11,9 @@ import { BackgroundDirective } from './directives/my-directives/background.direc
 import { NewDirective } from './directives/new-directive/new.directive';
 import { HoverDirective } from './directives/hover/hover.directive';
 import { PipesComponent } from './pipes/pipes.component';
+import { OwnPipesComponent } from './own-pipes/own-pipes.component';
+import { PowPipe } from './own-pipes/my-pipe/pow.pipe';
+import { TestPipe } from './own-pipes/test-pipe/test.pipe';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,13 @@ import { PipesComponent } from './pipes/pipes.component';
     AddCarComponent,
     DirectivesComponent,
     BackgroundDirective,
+    PowPipe,
 
     NewDirective,
-     HoverDirective,
-     PipesComponent
+    HoverDirective,
+    PipesComponent,
+    OwnPipesComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule, FormsModule,
