@@ -1,3 +1,11 @@
 .white-text {
   color: white;
 }
+
+.underline {
+  text-decoration:underline;
+}
+
+.yellow-text {
+  color:yellow;
+}
