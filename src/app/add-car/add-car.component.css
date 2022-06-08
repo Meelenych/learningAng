@@ -1,0 +1,14 @@
+li div {
+  border: 1px solid grey;
+  border-radius: 4px;
+  text-align: center;
+}
+
+li{
+  margin-bottom: 10px;
+}
+
+button{
+  margin-right: 10px;
+
+}
