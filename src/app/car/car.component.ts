@@ -21,7 +21,7 @@ export class CarComponent {
   // getName() {
   //   return this.carName
   // }
-  @Input() carItem: { name: string, year: number } = { name: '', year: 0 }
+  @Input() carItem: { name: string, year: number, model: string } = { name: '', year: 0, model: '' }
 
   // или так через элиас Allias
   // @Input('carItem') car: { name: string, year: number } = { name: '', year: 0 }

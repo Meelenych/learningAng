@@ -5,11 +5,13 @@
 
 <!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
 <p>Type car make here</p>
-<input type="text" class="form-control mb-3" [(ngModel)]="carName" />
+<input type="text" class="form-control mb-3" #carNameInput />
 <p>Type car year here</p>
 <input type="text" class="form-control mb-3" [(ngModel)]="carYear" />
+<hr />
+<input type="text" class="form-control mb-3" #carModel />
 
-<button class="btn btn-primary" (click)="addCar()">Add car</button>
+<button class="btn btn-primary" (click)="addCar(carNameInput)">Add car</button>
 <!-- <p>{{ addCarStatus }}</p> -->
 <hr />
 

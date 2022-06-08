@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 // import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   // encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CarsComponent {
+  // @Output('onAddCar') carEmitter = new EventEmitter < name: string, year: number, model: string > ();
+  @ViewChild('carModel') carModelInput: any;
 
   // canAddCar = false;
 
@@ -25,10 +27,10 @@ export class CarsComponent {
   carYear = 2022;
   // addCarStatus = false;
   cars = [
-    { name: 'Ford', year: 2013 },
-    { name: 'Audi', year: 2018 },
-    { name: 'Porsche', year: 2015 },
-    { name: 'Lamborgini', year: 2017 }
+    { name: 'Ford', year: 2013, model: 'Sierra' },
+    { name: 'Audi', year: 2018, model: 'Q7' },
+    { name: 'Porsche', year: 2015, model: "Panamera" },
+    { name: 'Lamborgini', year: 2017, model: 'Diablo' }
   ]
 
   // cars = ['Ford', 'Audi', 'BMW', 'Toyota', 'Opel'];
@@ -50,20 +52,30 @@ export class CarsComponent {
   constructor() {
   }
 
-  addCar() {
+  addCar(carNameEl: HTMLInputElement) {
+    // console.log(carNameEl.value)
     // this.addCarStatus = 'Car was added!'
     // this.addCarStatus = true;
     this.cars.push({
-      name: this.carName,
-      year: this.carYear
+      name: carNameEl.value,
+      // name: this.carName,
+      year: this.carYear,
+      // model: carModel.value,
+      model: this.carModelInput.nativeElement.value
     });
-    this.carName = '';
+    carNameEl.value = '';
+    // this.carName = '';
     this.carYear = 2022;
+    // carModel.value = '';
+    this.carModelInput.nativeElement.value = '';
+
+    // console.log(this.carModelInput)
+
   }
 
-  setBigCarText(car: string) {
-    return car.length > 4 ? true : false;
-  }
+  // setBigCarText(car: string) {
+  //   return car.length > 4 ? true : false;
+  // }
 
   // onKeyUp(event: Event): void {
   //   console.log(event)
