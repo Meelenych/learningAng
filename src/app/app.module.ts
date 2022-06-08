@@ -9,6 +9,7 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { BackgroundDirective } from './directives/my-directives/background.directive';
 import { NewDirective } from './directives/new-directive/new.directive';
+import { HoverDirective } from './directives/hover/hover.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewDirective } from './directives/new-directive/new.directive';
     DirectivesComponent,
     BackgroundDirective,
 
-    NewDirective
+    NewDirective,
+     HoverDirective
   ],
   imports: [
     BrowserModule, FormsModule,
