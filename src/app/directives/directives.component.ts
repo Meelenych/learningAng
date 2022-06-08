@@ -9,6 +9,4 @@ export class DirectivesComponent {
 
   headerText: string = 'Create your directives!'
 
-
-
 }

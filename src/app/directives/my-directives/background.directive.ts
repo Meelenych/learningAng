@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit } from "@angular/core";
+import { Directive, ElementRef, OnInit, Renderer2 } from "@angular/core";
 
 
 @Directive({
@@ -6,10 +6,15 @@ import { Directive, ElementRef, OnInit } from "@angular/core";
 })
 
 export class BackgroundDirective implements OnInit {
-  constructor(private element: ElementRef) { }
+  constructor(private myElement: ElementRef, private myRenderer: Renderer2) { }
 
   ngOnInit(): void {
-    console.log(this.element)
-    this.element.nativeElement.style.backgroundColor = 'royalblue'
+    // console.log(this.element)
+    // this.myElement.nativeElement.style.backgroundColor = 'royalblue';
+
+    const { nativeElement } = this.myElement // вытягиваем нейтив из элемента
+
+    this.myRenderer.setStyle(nativeElement, 'background-color', 'blueviolet');
+    this.myRenderer.addClass(this.myElement.nativeElement, 'white-text');
   }
 }
