@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, ContentChild } from '@angular/core';
 
 @Component({
   // selector: 'app-car', // как тег <app-car>
@@ -25,4 +25,16 @@ export class CarComponent {
 
   // или так через элиас Allias
   // @Input('carItem') car: { name: string, year: number } = { name: '', year: 0 }
+
+  // @ViewChild('carHeader') carHeading: ElementRef;
+  // @ViewChild('carHeader') carHeading: any;
+  @ContentChild('carHeader') carHeading: ElementRef;
+
+  ngAfterViewInit() {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    console.log(this.carHeading)
+  }
+
+
 }

@@ -6,10 +6,10 @@
 <!-- <button class="btn btn-primary" disabled="{{ !canAddCar }}">Add car</button> или так -->
 <p>Type car make here</p>
 <input type="text" class="form-control mb-3" #carNameInput />
+<p>Type car model here</p>
+<input type="text" class="form-control mb-3" #carModel />
 <p>Type car year here</p>
 <input type="text" class="form-control mb-3" [(ngModel)]="carYear" />
-<hr />
-<input type="text" class="form-control mb-3" #carModel />
 
 <button class="btn btn-primary" (click)="addCar(carNameInput)">Add car</button>
 <!-- <p>{{ addCarStatus }}</p> -->
@@ -48,7 +48,10 @@
 </ul> -->
 
 <!-- а можно вот так! -->
-<div class="app-car" *ngFor="let car of cars" [carItem]="car"></div>
+<div class="app-car" *ngFor="let car of cars" [carItem]="car">
+  <div class="alert alert-info">This car is sold!</div>
+  <!-- передача контента из тегов в ng-content -->
+</div>
 
 <!-- <ul>
   <h4>формат по умолчанию</h4>

@@ -3,11 +3,15 @@
 <!-- <p>{{ "Model" }}: {{ carModel }}</p> -->
 <!-- Model как JS преобразовывается Ангуляром в строку -->
 <!-- <p>Production year: {{ carYear }}</p> -->
-
-<p>Name: {{ carItem.name }}</p>
-<p>Model: {{ carItem.model }}</p>
-<p>Year: {{ carItem.year }}</p>
-<hr />
+<h4 #carHeader class="list-group-item list-group-item-action mb-0">
+  <i>{{ carItem.name }} {{ carItem.model }}</i>
+</h4>
+<div class="list-group-item mb-4">
+  <p>Name: {{ carItem.name }}</p>
+  <p>Model: {{ carItem.model }}</p>
+  <p>Year: {{ carItem.year }}</p>
+  <ng-content></ng-content>
+</div>
 
 <!-- или так чере элиас -->
 <!-- <p>Name: {{ car.name }}</p>

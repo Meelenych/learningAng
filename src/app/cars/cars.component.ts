@@ -27,7 +27,7 @@ export class CarsComponent {
   carYear = 2022;
   // addCarStatus = false;
   cars = [
-    { name: 'Ford', year: 2013, model: 'Sierra' },
+    { name: 'Ford', year: 2012, model: 'Focus' },
     { name: 'Audi', year: 2018, model: 'Q7' },
     { name: 'Porsche', year: 2015, model: "Panamera" },
     { name: 'Lamborgini', year: 2017, model: 'Diablo' }
