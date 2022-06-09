@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import 'rxjs'
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+// import 'rxjs'
+// import { Observable } from 'rxjs';
+// import { of } from 'rxjs';
 
 
 
@@ -34,8 +34,8 @@ export class FilterComponent {
   //   .subscribe(str => this.title = str)
 
 
-  asyncTitle = Observable.of('Async title 3 seconds')
-    .delay(3000)
+  // asyncTitle = Observable.of('Async title 3 seconds')
+  //   .delay(3000)
 
 
 

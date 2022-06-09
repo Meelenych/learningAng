@@ -16,6 +16,7 @@ import { PowPipe } from './own-pipes/my-pipe/pow.pipe';
 import { TestPipe } from './own-pipes/test-pipe/test.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { FilterPipe } from './own-pipes/car-filter/filter.pipe';
+import { BuyCarComponent } from './buy-car/buy-car.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FilterPipe } from './own-pipes/car-filter/filter.pipe';
     TestPipe,
     FilterComponent,
     FilterPipe,
+    BuyCarComponent,
   ],
   imports: [
     BrowserModule, FormsModule,

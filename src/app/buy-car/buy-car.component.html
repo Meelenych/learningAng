@@ -1,0 +1,32 @@
+<h1>Buy car app</h1>
+<form (submit)="addCarToList(carNameInput.value)">
+  <input type="text" class="form-control mb-3" #carNameInput />
+  <button class="btn btn-primary mb-3" type="submit">Add car</button>
+</form>
+<ul class="list-group">
+  <li *ngFor="let car of cars">
+    <div class="list-group-item rounded list-group-item-primary mb-3">
+      <p>{{ car.name }}</p>
+      <p *ngIf="car.sold === false" [ngClass]="'list-group-item-success'">
+        Status: availabe!
+      </p>
+      <p class="list-group-item-danger" *ngIf="car.sold === true">
+        Status: sold out!
+      </p>
+      <button
+        [disabled]="car.sold"
+        class="btn btn-success"
+        (click)="onAction('buy', car)"
+      >
+        Buy
+      </button>
+      <button
+        [disabled]="!car.sold"
+        class="btn btn-danger"
+        (click)="onAction('return', car)"
+      >
+        Return
+      </button>
+    </div>
+  </li>
+</ul>
