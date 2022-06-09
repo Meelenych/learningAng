@@ -6,7 +6,7 @@ import { CarsService } from './cars.service'
   selector: 'app-buy-car',
   templateUrl: './buy-car.component.html',
   styleUrls: ['./buy-car.component.css'],
-  providers: [ConsoleService]
+  // providers: [ConsoleService]
   //правильное использование сервиса INJECTION
 })
 export class BuyCarComponent implements OnInit {
