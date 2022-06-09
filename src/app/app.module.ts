@@ -17,6 +17,7 @@ import { TestPipe } from './own-pipes/test-pipe/test.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { FilterPipe } from './own-pipes/car-filter/filter.pipe';
 import { BuyCarComponent } from './buy-car/buy-car.component';
+import { CarsService } from './buy-car/cars.service'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { BuyCarComponent } from './buy-car/buy-car.component';
   imports: [
     BrowserModule, FormsModule,
   ],
-  providers: [],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

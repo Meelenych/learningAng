@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConsoleService } from './console.service';
+import { CarsService } from './cars.service'
 
 @Component({
   selector: 'app-buy-car',
@@ -8,21 +9,20 @@ import { ConsoleService } from './console.service';
   providers: [ConsoleService]
   //правильное использование сервиса INJECTION
 })
-export class BuyCarComponent {
+export class BuyCarComponent implements OnInit {
 
-  constructor(private service: ConsoleService) { }
+  constructor(private service: ConsoleService, private carsService: CarsService) { }
   //правильное использование сервиса INJECTION
 
-  cars = [
-    { name: 'Ford', sold: true },
-    { name: 'Mazda', sold: true },
-    { name: 'Toyota', sold: true },
-    { name: 'Fiat', sold: true }
-  ];
+  cars = [];
 
 
-  addCarToList(carName) {
-    this.cars.push({ name: carName, sold: false })
+  ngOnInit() {
+    this.cars = this.carsService.cars
+  }
+
+  addCarToList(name) {
+    this.carsService.addCarToList(name)
   }
 
   onAction(action: string, carName) {
