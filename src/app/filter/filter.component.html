@@ -5,13 +5,17 @@
   placeholder="type car make here"
   [(ngModel)]="searchCar"
 />
+<button class="btn btn-primary mt-2" type="button" (click)="addCar()">
+  Add car
+</button>
 <hr />
 <ul>
   <li *ngFor="let car of cars | carFilter: searchCar:'name'">
     <b>{{ car.name }} </b> <i>{{ car.model }} </i> {{ car.year }}
   </li>
 </ul>
-<hr />
+<h2>{{ asyncTitle | async }}</h2>
+<!-- <hr />
 <input
   type="text"
   class="form-control"
@@ -23,4 +27,4 @@
   <li *ngFor="let car of cars | carFilter: searchCar:'model'">
     <b>{{ car.name }} </b> <i>{{ car.model }} </i> {{ car.year }}
   </li>
-</ul>
+</ul> -->

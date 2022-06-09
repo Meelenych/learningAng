@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import 'rxjs'
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-filter',
@@ -23,4 +28,22 @@ export class FilterComponent {
     { name: 'Volkswagen', year: 2014, model: 'New Beetle' },
   ];
 
+  // title = '';
+  // asyncTitle: string = Observable.of('Async title 3 seconds')
+  //   .delay(3000)
+  //   .subscribe(str => this.title = str)
+
+
+  asyncTitle = Observable.of('Async title 3 seconds')
+    .delay(3000)
+
+
+
+  addCar() {
+    this.cars.push({
+      name: 'New car',
+      year: 2014,
+      model: 'Brand new'
+    })
+  }
 }
