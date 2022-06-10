@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
@@ -19,7 +19,8 @@ import { FilterPipe } from './own-pipes/car-filter/filter.pipe';
 import { BuyCarComponent } from './buy-car/buy-car.component';
 import { ConsoleService } from './buy-car/console.service';
 import { CarsService } from './buy-car/cars.service';
-import { FormsComponent } from './forms/forms.component'
+import { FormsComponent } from './forms/forms.component';
+import { ReactFormComponent } from './react-form/react-form.component'
 
 @NgModule({
   declarations: [
@@ -39,9 +40,11 @@ import { FormsComponent } from './forms/forms.component'
     FilterPipe,
     BuyCarComponent,
     FormsComponent,
+    ReactFormComponent,
+
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
   ],
   providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]
