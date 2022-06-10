@@ -24,8 +24,18 @@ export class ReactFormComponent implements OnInit {
   ngOnInit() {
 
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required),
+      // email: new FormControl('', [Validators.required, Validators.email]),
+      // password: new FormControl('', Validators.required),
+      // country: new FormControl(''),
+      // city: new FormControl(''),
+      // answer: new FormControl(''),
+
+      //Grouping inputs
+      user: new FormGroup({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required, this.checkPassLength.bind(this)]),
+        //если применяем переменные для проверки и вывода инфы об ошибках, нужно валидатору привязать контекст .bind(this)
+      }),
       country: new FormControl(''),
       city: new FormControl(''),
       answer: new FormControl(''),
@@ -34,6 +44,16 @@ export class ReactFormComponent implements OnInit {
   }
   onSubmit() {
     console.log('submitted', this.form)
+  }
+  //own validation
+  //it returns either {'errorCode:true'} or null undefined
+  charsCount = 5;
+
+  checkPassLength(control: FormControl) {
+    if (control.value.length <= this.charsCount) {
+      return { 'lengthError': true }
+    }
+    return null
   }
 
 

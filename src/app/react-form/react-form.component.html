@@ -2,7 +2,7 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
-    <div>
+    <div formGroupName="user">
       <div class="form-group">
         <label class="input-group-text" for="email">Email</label>
         <input
@@ -15,7 +15,9 @@
           formControlName="email"
         />
         <p
-          *ngIf="form.get('email').invalid && form.get('email').touched"
+          *ngIf="
+            form.get('user.email').invalid && form.get('user.email').touched
+          "
           class="bg-danger p-1 rounded"
         >
           Type a valid email address
@@ -33,10 +35,18 @@
           formControlName="password"
         />
         <p
-          *ngIf="form.get('password').invalid && form.get('password').touched"
+          *ngIf="
+            form.get('user.password').invalid &&
+            form.get('user.password').touched
+          "
           class="bg-danger p-1 rounded"
         >
-          Password cannot be empty
+          <span *ngIf="form.get('user.password').errors['required']"
+            >Password cannot be empty!
+          </span>
+          <span *ngIf="form.get('user.password').errors['lengthError']"
+            >Password cannot be shorter than {{ charsCount }} symbols!</span
+          >
         </p>
       </div>
     </div>
@@ -86,12 +96,6 @@
       </div>
     </div>
 
-    <button
-      [disabled]="form.invalid"
-      class="btn btn-primary btn-lg btn-block"
-      type="submit"
-    >
-      Save
-    </button>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
   </div>
 </form>
