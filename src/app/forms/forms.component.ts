@@ -25,14 +25,19 @@ export class FormsComponent {
   defaultAnswer = 'no';
   defaultCountry = 'ua';
 
-  registerData = [];
+  // registerData = [];
+  regUserData = {};
+  isSubmitted = false;
 
 
   // ViewChild
   submitForm() {
-    console.log('submitted', this.myForm)
-    this.registerData.push(this.myForm.value)
-    console.log(this.registerData)
+    // console.log('submitted', this.myForm)
+    // this.registerData.push(this.myForm.value)
+    // console.log(this.registerData)
+    this.isSubmitted = true;
+    this.regUserData = this.myForm.value;
+    this.myForm.reset();
   }
 
 
@@ -44,4 +49,23 @@ export class FormsComponent {
   //   console.log(this.registerData)
   // };
 
+  addRandomEmail() {
+    const randomEmail = 'me@gmail.com';
+    // this.myForm.setValue(
+    //   {
+    //     user:
+    //     {
+    //       email: randomEmail,
+    //       password: ''
+    //     },
+    //     country: '',
+    //     city: '',
+    //     answer: '',
+    //   }
+    // )
+    //====Так правильнее, не обновляется вся форма
+    this.myForm.form.patchValue({
+      user: { email: randomEmail, }
+    })
+  }
 }

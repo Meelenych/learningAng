@@ -27,6 +27,14 @@
         <!-- just write 'email' for validation -->
       </div>
 
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg btn-block mb-2"
+        (click)="addRandomEmail()"
+      >
+        Add random email
+      </button>
+
       <div class="form-group">
         <label class="input-group-text" for="password">Password</label>
         <input
@@ -110,5 +118,13 @@
     >
       Save
     </button>
+
+    <p *ngIf="isSubmitted" class="bg-success rounded m-3 p-2">
+      The following data was saved successfully!
+    </p>
+    <pre class="bg-secondary p-2 rounded" *ngIf="isSubmitted">
+        {{ regUserData | json }}
+      </pre
+    >
   </div>
 </form>
