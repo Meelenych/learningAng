@@ -1,33 +1,29 @@
 <h1>Please register!</h1>
 
-<form action="" class="form-group">
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
   <div class="form-group">
     <label class="input-group-text" for="email">Email</label>
-    <input type="email" class="form-control mb-2" />
+    <input type="email" class="form-control mb-2" ngModel name="email" />
 
     <label class="input-group-text" for="password">Password</label>
-    <input type="password" class="form-control mb-2" />
+    <input type="password" class="form-control mb-2" ngModel name="password" />
 
     <label class="input-group-text" for="text">Country</label>
-    <select class="form-control mb-2">
+    <select class="form-control mb-2" ngModel name="country">
       <option selected>Ukraine</option>
       <option>United States</option>
       <option>United Kingdom</option>
       <option>Germany</option>
       <option>Austria</option>
     </select>
-    <div class="form-group d-flex flex-column">
-      <div>
-        <input type="radio" id="yes" />
-        <label for="yes" class="m-2">Так</label>
-      </div>
-      <div>
-        <input type="radio" id="no" />
-        <label for="no" class="m-2">Ніт</label>
-      </div>
+    <div class="radio" *ngFor="let answer of answers">
+      <label>
+        <input type="radio" [value]="answer.type" ngModel name="answer" />
+        {{ answer.text }}
+      </label>
     </div>
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Save</button>
+      <button class="btn btn-outline-secondary mt-3" type="submit">Save</button>
     </div>
   </div>
 </form>

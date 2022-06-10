@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -17,5 +18,15 @@ export class FormsComponent {
       text: 'Ніт'
     },
   ];
+
+  registerData = [];
+
+  submitForm(myForm: NgForm) {
+    console.log(
+      'submitted', myForm.value
+    )
+    this.registerData.push(myForm.value)
+    console.log(this.registerData)
+  };
 
 }
