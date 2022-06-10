@@ -32,7 +32,8 @@ export class ReactFormComponent implements OnInit {
 
       //Grouping inputs
       user: new FormGroup({
-        email: new FormControl('', [Validators.required, Validators.email]),
+        email: new FormControl('', [Validators.required, Validators.email], this.checkForAlreadyUsedEmail),
+        //checkForAlreadyUsedEmail асинхронный, поэтому в общий массив валидаторов не кидаем
         password: new FormControl('', [Validators.required, this.checkPassLength.bind(this)]),
         //если применяем переменные для проверки и вывода инфы об ошибках, нужно валидатору привязать контекст .bind(this)
       }),
@@ -44,9 +45,12 @@ export class ReactFormComponent implements OnInit {
   }
   onSubmit() {
     console.log('submitted', this.form)
+    // this.form.reset()
   }
+
+
   //own validation
-  //it returns either {'errorCode:true'} or null undefined
+  //this method returns either {'errorCode:true'} or null undefined
   charsCount = 5;
 
   checkPassLength(control: FormControl) {
@@ -56,5 +60,19 @@ export class ReactFormComponent implements OnInit {
     return null
   }
 
+  //метод должен возвращать Promise или Observable
+  checkForAlreadyUsedEmail(control: FormControl): Promise<any> {
 
+    return new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'test@gmail.com') {
+          resolve({
+            'emailIsUsed': true
+          })
+        } else {
+          resolve(null)
+        }
+      }, 2000)
+    })
+  }
 }

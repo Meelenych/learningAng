@@ -15,12 +15,24 @@
           formControlName="email"
         />
         <p
-          *ngIf="
-            form.get('user.email').invalid && form.get('user.email').touched
-          "
           class="bg-danger p-1 rounded"
+          *ngIf="
+            form.get('user.email').touched && form.get('user.email').invalid
+          "
         >
-          Type a valid email address
+          <span *ngIf="form.get('user.email').errors['emailIsUsed']"
+            >Email is already in use!
+          </span>
+          <span *ngIf="form.get('user.email').errors['email']"
+            >Type a valid email address!
+          </span>
+          <span
+            *ngIf="
+              form.get('user.email').touched &&
+              form.get('user.email').errors['required']
+            "
+            >Email cannot be empty!</span
+          >
         </p>
       </div>
 
@@ -96,6 +108,12 @@
       </div>
     </div>
 
-    <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
+    <button
+      class="btn btn-primary btn-lg btn-block"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Save
+    </button>
   </div>
 </form>
