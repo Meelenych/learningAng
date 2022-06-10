@@ -6,80 +6,101 @@
   <!-- <div [ngClass]="{ 'has-error': myEmail.invalid && myEmail.touched }"> -->
   <!-- заменено на validation via CSS’s :invalid and :valid pseudo-classes. -->
   <div>
-    <label class="input-group-text" for="email">Email</label>
-    <input
-      type="email"
-      class="form-control mb-2"
-      ngModel
-      name="email"
-      required
-      email
-      #myEmail="ngModel"
-    />
-    <p *ngIf="myEmail.invalid && myEmail.touched" class="bg-danger p-1 rounded">
-      Type a valid email address
-    </p>
-    <!-- just write 'email' for validation -->
-
-    <label class="input-group-text" for="password">Password</label>
-    <input
-      type="password"
-      class="form-control mb-2"
-      ngModel
-      name="password"
-      required
-      #myPass="ngModel"
-    />
-    <p *ngIf="myPass.invalid && myPass.touched" class="bg-danger p-1 rounded">
-      Password cannot be empty
-    </p>
-
-    <label class="input-group-text" for="country">Country</label>
-    <select
-      class="form-control mb-2"
-      [ngModel]="defaultCountry"
-      name="country"
-      required
-      #myCountry="ngModel"
-    >
-      <option value="ua">Ukraine</option>
-      <option value="us">United States</option>
-      <option value="uk">United Kingdom</option>
-      <option value="de">Germany</option>
-      <option value="at">Austria</option>
-    </select>
-
-    <label class="input-group-text" for="city">City</label>
-    <input
-      type="text"
-      class="form-control mb-2"
-      ngModel
-      name="city"
-      required
-      #myCity="ngModel"
-    />
-
-    <p *ngIf="myCity.invalid && myCity.touched" class="bg-danger p-1 rounded">
-      City cannot be empty
-    </p>
-
-    <p>I want to receive news mails.</p>
-    <div class="radio" *ngFor="let answer of answers">
-      <label>
+    <div ngModelGroup="user" #user="ngModelGroup">
+      <div class="form-group">
+        <label class="input-group-text" for="email">Email</label>
         <input
-          type="radio"
-          [value]="answer.type"
+          type="email"
+          class="form-control mb-2"
           ngModel
-          name="answer"
+          name="email"
           required
-          #myAnswer="ngModel"
+          email
+          #myEmail="ngModel"
         />
-        {{ answer.text }}
-      </label>
+        <p
+          *ngIf="myEmail.invalid && myEmail.touched"
+          class="bg-danger p-1 rounded"
+        >
+          Type a valid email address
+        </p>
+        <!-- just write 'email' for validation -->
+      </div>
 
-      <p *ngIf="myAnswer.untouched" class="bg-warning p-1 rounded">
-        Please select your answer
+      <div class="form-group">
+        <label class="input-group-text" for="password">Password</label>
+        <input
+          type="password"
+          class="form-control mb-2"
+          ngModel
+          name="password"
+          required
+          #myPass="ngModel"
+        />
+        <p
+          *ngIf="myPass.invalid && myPass.touched"
+          class="bg-danger p-1 rounded"
+        >
+          Password cannot be empty
+        </p>
+      </div>
+
+      <p *ngIf="user.invalid && user.touched" class="bg-warning p-1 rounded">
+        User data are incorrect!
       </p>
+    </div>
+
+    <div class="form-group">
+      <label class="input-group-text" for="country">Country</label>
+      <select
+        class="form-control mb-2"
+        [ngModel]="defaultCountry"
+        name="country"
+        required
+        #myCountry="ngModel"
+      >
+        <option value="ua">Ukraine</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="de">Germany</option>
+        <option value="at">Austria</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="input-group-text" for="city">City</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        ngModel
+        name="city"
+        required
+        #myCity="ngModel"
+      />
+      <p *ngIf="myCity.invalid && myCity.touched" class="bg-danger p-1 rounded">
+        City cannot be empty
+      </p>
+    </div>
+
+    <div class="form-group">
+      <p>I want to receive news mails.</p>
+      <div class="radio" *ngFor="let answer of answers">
+        <label>
+          <input
+            type="radio"
+            [value]="answer.type"
+            ngModel
+            name="answer"
+            required
+            #myAnswer="ngModel"
+          />
+          {{ answer.text }}
+        </label>
+
+        <p *ngIf="myAnswer.untouched" class="bg-warning p-1 rounded">
+          Please select your answer
+        </p>
+      </div>
     </div>
 
     <button
